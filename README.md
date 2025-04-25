@@ -2,7 +2,15 @@
 
 Este repositório tem como objetivo configurar um servidor web básico utilizando o Apache no WSL (Windows Subsystem for Linux), criando um ambiente de desenvolvimento para testar a configuração de servidores web.
 
-## Passos para Configuração:
+## Tecnologias Utilizadas
+
+- **Apache** como servidor web
+- **Ubuntu** no WSL
+- **Bash scripting** para automação
+- **UFW (Firewall)** para segurança
+- **MySQL/MariaDB** (opcional)
+
+## Passos para Configuração
 
 1. **Instalação do Apache no Ubuntu (WSL)**:
     - Atualize o repositório de pacotes:
@@ -20,16 +28,31 @@ Este repositório tem como objetivo configurar um servidor web básico utilizand
       echo "<html><body><h1>Servidor Web funcionando!</h1></body></html>" > /var/www/html/index.html
       ```
 
-3. **Testar o Servidor Localmente**:
+3. **Automatizando o Processo com `setup.sh`**:
+    - Faça o download do arquivo `setup.sh` e execute-o:
+      ```bash
+      bash setup.sh
+      ```
+
+4. **Configuração de Virtual Host (Opcional)**:
+    - Configure o Apache para rodar múltiplos sites locais com um Virtual Host. Exemplo:
+      ```bash
+      sudo nano /etc/apache2/sites-available/meu_site.conf
+      ```
+
+5. **Testar o Servidor Localmente**:
     - Acesse o servidor no seu navegador:
       ```
       http://localhost
       ```
 
-4. **Configuração Adicional (Opcional)**:
-    - Se desejar configurar o Apache para iniciar automaticamente ao iniciar o WSL, você pode adicionar comandos personalizados de inicialização.
+6. **Segurança**:
+    - Adicione uma camada de segurança configurando o **firewall UFW**:
+      ```bash
+      sudo ufw allow 'Apache'
+      sudo ufw enable
+      ```
 
-## Tecnologias Utilizadas
+## Conclusão
 
-- **Apache** como servidor web
-- **Ubuntu** no WSL
+Este projeto serve como base para entender a configuração e manutenção de servidores web utilizando o Apache no WSL. Ele pode ser expandido para incluir integração com bancos de dados, automação de deploy e outras ferramentas de segurança.
