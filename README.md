@@ -1,14 +1,20 @@
 # Projeto: Infra Web Server no WSL
 
+## Pré-requisitos
+
+Antes de começar, você precisa ter os seguintes softwares instalados:
+
+- **Windows Subsystem for Linux (WSL)** configurado com a distribuição **Ubuntu**.
+- **Apache**: Para instalar o Apache, siga as instruções abaixo.
+
 Este repositório tem como objetivo configurar um servidor web básico utilizando o Apache no WSL (Windows Subsystem for Linux), criando um ambiente de desenvolvimento para testar a configuração de servidores web.
 
 ## Tecnologias Utilizadas
 
-- **Apache** como servidor web
-- **Ubuntu** no WSL
-- **Bash scripting** para automação
-- **UFW (Firewall)** para segurança
-- **MySQL/MariaDB** (opcional)
+- **Apache**: Servidor web de código aberto.
+- **Ubuntu (WSL)**: Sistema operacional baseado em Linux no Windows Subsystem for Linux.
+- **Bash Scripting**: Usado para automatizar a instalação e a configuração do Apache.
+- **UFW (Firewall)**: Ferramenta de firewall para gerenciar a segurança do servidor.
 
 ## Passos para Configuração
 
@@ -21,6 +27,9 @@ Este repositório tem como objetivo configurar um servidor web básico utilizand
       ```bash
       sudo apt install apache2
       ```
+### Por que Apache?
+
+O Apache é um dos servidores web mais utilizados no mundo. Ele é fácil de configurar, flexível e possui uma grande comunidade de suporte. Além disso, a sua compatibilidade com ambientes Linux e Windows (via WSL) torna-o uma excelente escolha para um ambiente de desenvolvimento local.
 
 2. **Criação de um Arquivo HTML Simples**:
     - Crie um arquivo `index.html` na pasta `/var/www/html/`:
