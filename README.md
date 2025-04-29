@@ -1,76 +1,89 @@
-📡 Infra Web Monitor
-Infra Web Monitor é um projeto prático de infraestrutura que tem como objetivo configurar um servidor web utilizando Apache dentro do Windows Subsystem for Linux (WSL) e implementar um sistema de monitoramento de acessos em tempo real com Python e SQLite. Ideal para quem busca automatizar a gestão de logs e entender os fundamentos de servidores web, segurança e análise de acessos.
+# 📡 Infra Web Monitor
 
-🚀 Funcionalidades
-🧰 Instalação automatizada do Apache, SQLite e dependências via script Bash.
+**Infra Web Monitor** é um projeto prático de infraestrutura que configura um servidor web Apache dentro do WSL (Windows Subsystem for Linux) e implementa um sistema de **monitoramento de acessos em tempo real** com **Python** e **SQLite**.
 
-🛡️ Ativação de autenticação básica no servidor Apache para proteção de acesso.
+> Ideal para quem deseja entender fundamentos de servidores web, segurança da informação, automação com scripts e análise de logs.
 
-📑 Monitoramento de logs em tempo real usando Python.
+---
 
-🗃️ Registro dos acessos em um banco de dados SQLite, pronto para consultas SQL.
+## 🚀 Funcionalidades
 
-📊 Geração de estatísticas simples para análise de tráfego.
+- 🧰 Instalação automatizada do Apache, SQLite e dependências via script Bash.
+- 🛡️ Ativação de autenticação básica com `.htpasswd` e `.htaccess`.
+- 📑 Monitoramento de logs de acesso em tempo real com Python.
+- 🗃️ Registro de IPs, horários e URLs acessadas no banco de dados SQLite.
+- 📊 Geração de estatísticas básicas para análise de tráfego web.
 
-🧠 Objetivos de Aprendizado
-Configurar e administrar um servidor web Linux/Apache.
+---
 
-Automatizar tarefas com Bash e Python.
+## 🎯 Objetivos de Aprendizado
 
-Aplicar conceitos de Segurança da Informação com autenticação básica.
+- Configurar e administrar um servidor web Linux (Apache).
+- Automatizar tarefas com scripts em Bash e Python.
+- Aplicar práticas de segurança básicas com autenticação HTTP.
+- Gerenciar dados com SQLite e executar comandos SQL.
+- Ler e manipular arquivos de log (`access.log`) com Python.
 
-Gerenciar dados com SQLite e executar comandos SQL.
+---
 
-Ler e manipular arquivos de log (access.log) com Python.
+## 📦 Tecnologias Utilizadas
 
-📦 Tecnologias Utilizadas
+| Tecnologia       | Descrição                                                  |
+|------------------|------------------------------------------------------------|
+| **Apache**       | Servidor web open-source (porta 80/443)                    |
+| **Ubuntu (WSL)** | Subsistema Linux para Windows 10/11                        |
+| **Python 3**     | Script para leitura e inserção dos logs no banco           |
+| **SQLite**       | Banco de dados local para registrar os acessos             |
+| **Bash Script**  | Instalação e configuração automatizadas                    |
+| **.htpasswd**    | Autenticação básica com senha protegida                    |
 
-Tecnologia	Descrição
-Apache HTTP Server	Servidor web de código aberto (porta 80/443).
-Ubuntu (WSL)	Subsistema Linux para Windows 10/11.
-Python 3	Script para leitura e inserção dos logs no banco.
-SQLite	Banco de dados local para registro de acessos.
-Bash Script	Instalação e configuração automatizadas.
-.htpasswd/.htaccess	Proteção por autenticação no Apache.
+---
 
-📋 Pré-requisitos
-Antes de rodar o projeto, você precisa garantir:
+## 📋 Pré-requisitos
 
-✅ WSL com a distribuição Ubuntu instalada.
+Antes de rodar o projeto, certifique-se de ter:
 
-✅ Acesso root/sudo no Ubuntu (para instalar pacotes).
+- ✅ WSL com Ubuntu instalado
+- ✅ Acesso root/sudo no Ubuntu (para instalar pacotes)
+- ✅ Git instalado (Windows ou WSL)
+- ✅ Python 3 instalado no WSL
+- ✅ Permissão de execução nos scripts (`chmod +x setup.sh`)
 
-✅ Git instalado no Windows ou no WSL.
+---
 
-✅ Python 3 instalado no WSL.
+## ⚙️ Instalação e Execução
 
-✅ Permissão de execução (chmod +x) nos scripts do projeto.
-
-⚙️ Instalação e Uso
+```bash
+# Clone o repositório
 git clone https://github.com/ThiagoAlmeidaTI/infra-web-monitor.git
+
+# Acesse o diretório do projeto
 cd infra-web-monitor
-./setup.sh        # Instala Apache, SQLite e configura o ambiente
-python3 monitor.py  # Inicia o monitoramento de logs e grava no banco
+
+# Execute o script de instalação
+./setup.sh
+
+# Inicie o monitoramento de logs
+python3 monitor.py 
+```
 
 📈 Exemplo de Consulta SQL
+
 SELECT ip_address, access_time, requested_url 
 FROM access_logs 
 ORDER BY access_time DESC 
 LIMIT 10;
 
 🔒 Segurança Implementada
-Autenticação básica com .htpasswd e .htaccess
 
+Autenticação básica via .htpasswd e .htaccess
 Monitoramento constante dos logs de acesso
-
-Registro detalhado de IPs e tentativas de acesso
+Registro de IPs e tentativas de acesso
+Código Python legível e modular para análise de segurança
 
 👨‍💻 Autor
 Thiago Almeida dos Santos
 📍 Duque de Caxias, RJ
 📧 thiagoalmeida.work7@gmail.com
 🔗 LinkedIn | GitHub
-
-
-
 
