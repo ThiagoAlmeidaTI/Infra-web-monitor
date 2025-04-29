@@ -28,14 +28,14 @@
 
 ## 📦 Tecnologias Utilizadas
 
-| Tecnologia       | Descrição                                                  |
-|------------------|------------------------------------------------------------|
-| **Apache**       | Servidor web open-source (porta 80/443)                    |
-| **Ubuntu (WSL)** | Subsistema Linux para Windows 10/11                        |
-| **Python 3**     | Script para leitura e inserção dos logs no banco           |
-| **SQLite**       | Banco de dados local para registrar os acessos             |
-| **Bash Script**  | Instalação e configuração automatizadas                    |
-| **.htpasswd**    | Autenticação básica com senha protegida                    |
+| Ferramenta      | Função                                               |
+|-----------------|------------------------------------------------------|
+| **Ubuntu (WSL)* | Backend Linux rodando dentro do Windows              |
+| **Apache2**     | Servidor web para gerar os logs                      |
+| **SQLite3**     | Banco local para registrar acessos                   |
+| **Python 3**    | Script para capturar e inserir os logs               |
+| **Bash**        | Automatização da instalação e configuração           |
+| **VS Code**     | Editor principal, acessando o WSL via extensão       |
 
 ---
 
